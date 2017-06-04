@@ -1,0 +1,26 @@
+<div ng-include="'tpl/include/header.html'"></div>
+  <div class="container">
+    <div class="form-group has-feedback search">
+      <input type="text" class="form-control"  placeholder="搜索狗粮名称或品牌名称.." ng-model="kw"/>
+      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    </div>
+    <div class="list-group">
+      <a href="#/detail/{{obj.did}}" class="list-group-item" ng-repeat="obj in shuju">
+        <div class="media media-middle">
+          <div class="media-left">
+            <img ng-src="img/{{obj.img_sm}}" alt=""/>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">{{obj.name}}</h4>
+            <p class="text-danger">{{obj.material}}</p>
+            <p>¥{{obj.price}}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div>
+      <button class="btn btn-success btn-block" ng-click="logMore()" ng-show="hasMore">加载更多</button>
+      <div class="alert alert-danger" ng-hide="hasMore" role="alert">没有更多数据了</div>
+    </div>
+  </div>
+<div ng-include="'tpl/include/footer.html'"></div>

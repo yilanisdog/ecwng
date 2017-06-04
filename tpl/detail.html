@@ -1,0 +1,22 @@
+<div ng-include="'tpl/include/header.html'"></div>
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="#/start">首页</a></li>
+      <li>详情</li>
+    </ol>
+    <div class="panel panel-default">
+      <h2>{{shuju.name}}</h2>
+      <img ng-src="img/{{shuju.img_lg}}" class="img-responsive"/>
+      <p>{{shuju.material}}</p>
+      <p>{{shuju.detail}}</p>
+      <p>¥{{shuju.price}}</p>
+      <div class="panel-footer">
+        <div class="text-right">
+          <button ng-click="jump('/order/'+shuju.did)" class="btn btn-success ">我要购买</button>
+          <button ng-click="jump('/main')" class="btn btn-warning ">我在看看</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<div ng-include="'tpl/include/footer.html'"></div>
